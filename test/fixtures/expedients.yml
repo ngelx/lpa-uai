@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  student_id: 1
+  category_id: 1
+  details: MyText
+  presentation: 2012-07-12 07:25:04
+
+two:
+  student_id: 1
+  category_id: 1
+  details: MyText
+  presentation: 2012-07-12 07:25:04
