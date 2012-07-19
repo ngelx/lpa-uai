@@ -21,7 +21,7 @@
         <td><%=l user.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_user_path(user), :class => 'btn btn-mini' %>
+                      edit_user_path(user), {:class => 'btn btn-mini', :remote => true, 'data-controls-modal' =>  "modal-window", 'data-backdrop' => true, 'data-keyboard' => true}%>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       user_path(user),
                       :method => :delete,
@@ -35,4 +35,4 @@
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_user_path,
-            :class => 'btn btn-primary' %>
+            {:format => "js", :class => 'btn btn-primary', :remote => true, 'data-controls-modal' =>  "modal-window", 'data-backdrop' => true, 'data-keyboard' => true} %>
