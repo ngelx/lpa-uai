@@ -1,9 +1,9 @@
 class Transaction < ActiveRecord::Base
   attr_accessible :comment, :expedient_id, :office_id, :state, :user_id
   
-  belong_to :user
-  belong_to :office
-  belong_to :expedient
+  belongs_to :user
+  belongs_to :office
+  belongs_to :expedient
   
   
   STATE = {:new => {:id => 1, :name => "Nuevo"} }

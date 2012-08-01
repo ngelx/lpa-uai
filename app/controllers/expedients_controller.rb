@@ -87,15 +87,17 @@ class ExpedientsController < ApplicationController
   
   def move
     @expedient = Expedient.find(params[:id])
+    @transactions = @expedient.transactions
+    @office = Office.all
   end
   
   def move_confirm
     @expedient = Expedient.find(params[:id])
-    to_office = Office.find(params[:to_office])
+    to_office = Office.find(params[:to_office_id])
     # TODO: cambiar esto cuando se tenga el current_user
     user = User.first
 
-    @expedient.move(:user => user, :to => to_office)
+    @expedient.move(:user => user, :to => to_office, :comment => params[:comment])
     respond_to do |format|
       if @expedient.update_attributes(params[:expedient])
         format.html { redirect_to @expedient, notice: 'Expedient was successfully updated.' }

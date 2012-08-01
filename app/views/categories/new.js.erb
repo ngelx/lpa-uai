@@ -1,0 +1,5 @@
+$('.modal-body').html('<%= escape_javascript(render :partial => 'new', :object => @category) %>');
+$('.modal-header').remove(); // don't need a header here
+
+$('#modal-window').modal("show"); 
+ 

@@ -19,7 +19,7 @@
         <td><%=l category.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_category_path(category), :class => 'btn btn-mini' %>
+                      edit_category_path(category), {:class => 'btn btn-mini', :remote => true, 'data-controls-modal' =>  "modal-window", 'data-backdrop' => true, 'data-keyboard' => true} %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       category_path(category),
                       :method => :delete,
@@ -33,4 +33,4 @@
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_category_path,
-            :class => 'btn btn-primary' %>
+            {:format => "js", :class => 'btn btn-mini', :remote => true, 'data-controls-modal' =>  "modal-window", 'data-backdrop' => true, 'data-keyboard' => true} %>

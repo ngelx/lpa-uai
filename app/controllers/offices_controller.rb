@@ -26,10 +26,6 @@ class OfficesController < ApplicationController
   def new
     @office = Office.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @office }
-    end
   end
 
   # GET /offices/1/edit
@@ -44,7 +40,7 @@ class OfficesController < ApplicationController
 
     respond_to do |format|
       if @office.save
-        format.html { redirect_to @office, notice: 'Office was successfully created.' }
+        format.html { redirect_to offices_url, notice: 'Oficina "' + @office.name + '" creada correctamente' }
         format.json { render json: @office, status: :created, location: @office }
       else
         format.html { render action: "new" }
@@ -60,7 +56,7 @@ class OfficesController < ApplicationController
 
     respond_to do |format|
       if @office.update_attributes(params[:office])
-        format.html { redirect_to @office, notice: 'Office was successfully updated.' }
+        format.html { redirect_to offices_url, notice: 'Oficina modificada correctamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

@@ -1,0 +1,4 @@
+$('.modal-body').html('<%= escape_javascript(render :partial => 'move', :object => @expedient) %>');
+$('.modal-header').remove(); // don't need a header here
+
+$('#modal-window').modal("show");  

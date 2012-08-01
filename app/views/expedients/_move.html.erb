@@ -1,0 +1,40 @@
+
+Ultimos movimientos
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Oficina</th>
+      <th>Usuario</th>
+      <th>Comentario</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @transactions.each do |transaction| %>
+      <tr>
+        <td><%= l transaction.created_at %></td>
+        <td><%= transaction.office.name %></td>
+        <td><%= transaction.user.username %></td>
+        <td><%= transaction.comment %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= form_for @expedient, :url => {:action => 'move_confirm'}, :html => {:class => 'form-horizontal'}  do |f| %>
+  
+  <%= label_tag 'office', 'Oficina de destino'%>
+  <%= select_tag "to_office_id", options_from_collection_for_select(@office, "id", "name")%>
+  
+  <%= label_tag 'Commentario', 'Comentarios'%>
+  <%= text_area_tag 'comment', nil%>
+  
+  
+  <div class="form-actions">
+    <%= f.submit "confirmar", :class => 'btn btn-primary' %>
+    <%= link_to "Cancelar", "#", :class => 'btn', "data-dismiss" => "modal" %>
+  </div>
+
+<% end %>

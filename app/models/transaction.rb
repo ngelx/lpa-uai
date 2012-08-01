@@ -30,4 +30,11 @@ class Transaction < ActiveRecord::Base
 
   end
   
+  def state_name
+    STATE.each_value do |val|
+      return val[:name] if (val[:id] == self.state)
+    end
+    return "Desconocido"
+  end
+  
 end
