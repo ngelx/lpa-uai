@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "TpFinal" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "TpFinal LPA" %></title>
     <%= csrf_meta_tags %>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -12,7 +12,9 @@
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
     <![endif]-->
 
-    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= stylesheet_link_tag "bootstrap.min.css", :media => "all" %>
+    
+    <%= stylesheet_link_tag "lpa", :media => "all" %>
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
@@ -34,46 +36,45 @@
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
-    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "bootstrap.min.js" %>
 
-    <%= stylesheet_link_tag "bootstrap.min.css", :media => "all" %>
   </head>
     <body>
     <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">TP final</a>
-          <div class="nav-collapse">
-            <ul class="nav">
-              <li class="active"><%= link_to 'Inicio', root_path %></li>
-              <li><%= link_to 'Expedientes', expedients_path %></li>
-              <li><%= link_to 'Movimientos', transactions_path %></li>
+      <div class="container">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
 
-              <ul class="nav nav-pills">
-                <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                      Administracion 
-                      <b class="caret"></b>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><%= link_to 'Usuarios', users_path %></li>
-                    <li><%= link_to 'Alumnos', students_path %></li>
-                    <li><%= link_to 'Oficinas', offices_path %></li>
-                    <li><%= link_to 'Categorias', categories_path %></li>
-                  </ul>
-                </li>
+        <a class="navbar-brand" href="#">TP final</a>
+
+        <div id="navbar-main" class="nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><%= link_to 'Inicio', root_path %></li>
+            <li><%= link_to 'Expedientes', expedients_path %></li>
+            <li><%= link_to 'Movimientos', transactions_path %></li>
+          
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                  Administracion 
+                  <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'Usuarios', users_path %></li>
+                <li><%= link_to 'Alumnos', students_path %></li>
+                <li><%= link_to 'Oficinas', offices_path %></li>
+                <li><%= link_to 'Categorias', categories_path %></li>
               </ul>
-
-              <li><a href="/#about">About</a></li>
-              <li><a href="/#contact">Contacto</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav pull-right">
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#contact">Contacto</a></li>
+          </ul>
+          
+        </div><!--/.nav-collapse -->
       </div>
     </div>
     <div class="container">
