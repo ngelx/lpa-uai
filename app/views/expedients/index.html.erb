@@ -1,17 +1,17 @@
 <%- model_class = Expedient.new.class -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+  <h1>Expedientes</h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:student_id) %></th>
-      <th><%= model_class.human_attribute_name(:category_id) %></th>
-      <th><%= model_class.human_attribute_name(:status) %></th>
-      <th><%= model_class.human_attribute_name(:presentation) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th>Id</th>
+      <th>Estudiante</th>
+      <th>Categoria</th>
+      <th>Estado</th>
+      <th>Presentó</th>
+      <th>Fecha de registro</th>
+      <th>Aciones</th>
     </tr>
   </thead>
   <tbody>

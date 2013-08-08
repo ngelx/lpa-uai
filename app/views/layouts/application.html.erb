@@ -18,6 +18,7 @@
     <%= javascript_include_tag "jquery-2.0.3.min.js" %>
     <%= javascript_include_tag "jquery_ujs.js" %>
     <%= javascript_include_tag "bootstrap.min.js" %>
+    <%= javascript_include_tag "lpa.js" %>
 
     <%= csrf_meta_tags %>
 
@@ -75,14 +76,19 @@
       <%= render 'layouts/messages' %>
       <%= yield %>
       
-      <div class="modal hide fade" id="modal-window">
-        <div class="modal-header">
-          <a href="#" class="close">×</a>
-          <h3>Loading...</h3>
+      <div class="modal fade" id="modal-window">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <a href="#" class="close">×</a>
+              <h3>Loading...</h3>
+            </div>
+            <div class="modal-body center">
+              asdad
+            </div>
+            <div class="modal-footer">&nbsp;</div>
+          </div>
         </div>
-        <div class="modal-body center">
-        </div>
-        <div class="modal-footer">&nbsp;</div>
       </div>
       
     </div>
