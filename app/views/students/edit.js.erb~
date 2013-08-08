@@ -1,5 +1,0 @@
- 
-$('.modal-body').html('<%= escape_javascript(render :partial => 'edit', :object => @student) %>');
-$('.modal-header').html("<h1> Editar Usuario </h1>"); // don't need a header here
-
-$('#modal-window').modal("show");
